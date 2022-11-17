@@ -26,9 +26,10 @@ class MyWidget(QMainWindow):
             qp.end()
 
     def draw(self, qp):
-        qp.setBrush(QColor("yellow"))
-        qp.setPen(QColor("yellow"))
-        for _ in range(randint(50, 150)):
+        for _ in range(randint(100, 200)):
+            color = QColor(randint(0, 256), randint(0, 256), randint(0, 256))
+            qp.setBrush(color)
+            qp.setPen(color)
             diameter = randint(10, 70)
             qp.drawEllipse(randint(0, 1300), randint(0, 800), diameter, diameter)
 
